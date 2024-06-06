@@ -4,7 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q&A</title>
+</head>
+<body>
+    <div class="grid-container">
+        <button class="TabLinks" onclick="ToggleMenu(event, 'excel')">📝Excel</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'outlook')">📧Outlook</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'slack')">🍀Slack</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'nicollab')">📅Niコラボ</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'alladin')">📦アラジン</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'title')">タイトル</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'windows')">🌎Windows</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'other')">💊その他</button>
+        <button class="TabLinks" onclick="ToggleMenu(event, 'search')">🔍詳細検索</button>
+    </div>
+	</div>
+		<div id="excel" class="TabContent">
+		<div class="qa-section">
+		<div class="question"><b>Q: .xlsmファイルを開いたら、マクロの実行をブロックしたメッセージが表示される。</b></div>
+		<div class="answer">A: 「インターネットオプション」の画面の「セキュリティ」タブで「信頼済みサイト」を
+            選択して「サイト」ボタンをクリックし、「file://192.168.250.150」を追加する。
+            (「このゾーンのサイトにはすべてサーバーの確認(https:)を必要とする」のチェックは外しておく)]
+            <details>
+            <summary>備考</summary>
+            <p><b>「詳細を表示」をクリックすると、ブラウザで下記のページが表示される。</b></p>
+            <a href="https://support.microsoft.com/ja-jp/topic/%E6%BD%9C%E5%9C%A8%E7%9A%84%E3%81%AB%E5%8D%B1%E9%99%BA%E3%81%AA%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%8C%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F-0952faa0-37e7-4316-b61d-5b5ed6024216">潜在的に危険なマクロがブロックされました - Microsoft サポート</a>
+            </details>
+	</div>
+		<div class="qa-section">
+		<div class="question"><b>Q:セルにURLを入力すると、そのURLをクリックするとそのHPに飛ぶようになるが、HPに
+            飛ぶようにしつつ文字を変更する方法はあるか。(例：<a href="http://google.com	">文字</a>や<a href="http://google.com">●</a>	など文字や記号に設定してリンクを飛ぶ方法)</b></div>
+		<div class="answer">A: HPに飛ぶ情報は「ハイパーリンク」という機能であり、それを変更しない限り
+            文字を変更することは可能。そのセルをクリックすると画面が切り替わってしまうため、隣のセルを
+            クリック(選択)して十字キーで編集したいセルに移動すると良い。</div>
+	</div>
+	</div>
+	</div>
+		<div id="outlook" class="TabContent">
+		<div class="qa-section">
+		<div class="question"><b>Q:メールアプリを起動しようとすると、NewOutlookが起動する。</b></div>
+		<div class="answer">A:NewOutlookをアンインストール。
+	<details>
+			<summary>備考</summary>
+			<p><b>旧版起動</b></p>
+			<a href="https://mitomoha.hatenablog.com/entry/2022/08/17/014118">Microsoft 365 新 Outlook から戻せなくなったら古い Outlook を直接開きましょう - （）のブログ</a>
+			<p><b>画面から設定を戻す</b></p>
+			<a href="https://too-support.my.site.com/faq/s/article/000003233">Outlook（16.6x〜）で予期せず「新しい Outlook」に変更されメールの閲覧や送受信ができなくなった</a>
+	</details>
+	</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:インポートしても人数分「名前がありません」が表示される</b></div>
+			<div class="answer">A:outlookのエクスポートファイル(.csv)はUTF-8で作成されるが、インポートする時はSJISで処理される。このため、.csvをSJISに変換してからインポートして、正常に処理された。</div>
+	</div>
+	</div>
+	</div>
+			<div id="slack" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:マウスカーソルが表示されない。</b></div>
+			<div class="answer">A:Windows再起動。
+	<details>
+			<summary>備考</summary>
+			<p><b>Slackのウィンドウの中ではマウスカーソルが表示されなくなった。タスクバーや、他のウィンドウでは表示される。</b></p>
+	</details>
+	</div>
+	</div>
+	</div>
+			<div id="nicollab" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:ワークフローのリストをダウンロードしたい。「一括操作」ではPDFしか出力出来ないが、Excelやcsvで出力したい。</b></div>
+			<div class="answer">A:「詳細検索」で「申請書類」を指定すると、「書き出し」ボタンが表示される。このボタンをクリックすると、csvで出力される。</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:回覧板の選択項目を増やす方法が分からない。選択項目に「議事録」があるので追加ができるはずだが、どの画面で追加するかが分からない。</b></div>
+			<div class="answer">A:「右側にある「その他」の欄は自由に入力することが出来、そこに入力して回覧板を作成すると、次回以降は選択項目に追加された状態になります。</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:承認する時に通知設定にチェックを入れた状態で処理しようとすると、正しく処理されない場合がある。これを回避するため、通知設定を非表示または無効化したい。</b></div>
+			<div class="answer">A:通知設定を非表示または無効化することは出来ません。</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:「コメント通知」ボタンをクリックしないと通知先が見えないが、デフォルトで選択されているため「完了」をクリックした時に意図せず通知してしまう。</b></div>
+			<div class="answer">A:デフォルトで選択なしには出来ません。</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+			<div id="alladin" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:2重起動のメッセージが出て、起動できない</b></div>
+			<div class="answer">A:とりあえずの対応として、Alt+Tabで画面を表示して閉じていった。後で、PCを再起動したらサーバーのタスクバーは表示された。
+	<details>
+			<summary>備考</summary>
+			<p><b>実際には最小化されていただけだと思われるが、このPC(本館2F左)はリモートデスクトップを使用した場合に、デスクトップはサーバー側だがタスクバーはクライアント側が表示されている。このため、最小化状態であることが分からず、2重起動をしていた。</b></p>
+	</details>
+	</div>
+	</div>
+	</div>
+			<div id="title" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:質問</b></div>
+			<div class="answer"><b>A:回答</b>
+	<details>
+			<summary>備考</summary>
+			<p><b>内容</b></p>
+	</details>
+	</div>
+	</div>
+	</div>
+			<div id="windows" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:アドレス帳の編集が出来ない</b></div>
+			<div class="answer">A:「フォルダーの指定」で、デフォルトであるドキュメントの中の「Canon FAX Data」を選択したら、「このフォルダにはすでにアドレス帳データが存在します。このデータを使用しますか？」というメッセージが出たため、「はい」を選択したら復旧した。画面等については備考欄のURLを参照。
+	<details>
+			<summary>備考</summary>
+			<p><a href="https://faq.canon.jp/app/answers/detail/a_id/103956/~/%E3%80%90ir-adv%E3%80%91%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8B%E3%82%89%E3%83%95%E3%82%A1%E3%82%AF%E3%82%B9%E9%80%81%E4%BF%A1%E6%99%82%E3%80%81%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%B8%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%8F%E3%80%8C%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%9F%E3%81%9F%E3%82%81%E3%80%81%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%B8%B3%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%E3%80%8D%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95">【iR-ADV】パソコンからファクス送信時、アドレス帳が消えた／「エラーが発生したため、アドレス帳を操作できませんでした。」のエラーが表示されたときの対処方法</a></p>
+	</details>
+	</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:リモートデスクトップで(アラジンで出力した.xlsxファイルを)コピーし、ローカルで貼り付けようとしても、無効(出来ない)状態になっている。</b></div>
+			<div class="answer">A:リモート(サーバ)側でクリップボードを制御しているプロセスを再起動。(タスクマネージャーで「rdpclip.exe」を強制終了し、ファイルを指定して実行)
+	<details>
+			<summary>備考</summary>
+			<p><b>参照URLではグループポリシーの設定を変更する方法が記載されているが、アラジンのサーバーではグループポリシーを参照する権限が無いため、変更だけでなく確認も不可。</b></p>
+			<a href="https://atmarkit.itmedia.co.jp/ait/articles/1009/17/news125.html">【Windows 11対応】リモートデスクトップ接続でコピー＆ペーストする方法、できない場合の対処法：Tech TIPS - ＠IT</a></p>
+	</details>
+	</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:アラジンのAPサーバに、パスワード入力なしでログイン出来ていたが、パスワードを求められるようになった。</b></div>
+			<div class="answer">A:コマンドラインで下記を入力してEnter、メッセージが出るのでパスワードを入力。(IPアドレスとアカウントの番号部分は人によって異なる)
+			<br>192.から始まるIPアドレスと、user;から始まるAlladinの数字2桁の部分が異なる Cmdkey /generic:TERMSRV/192.168.168.250.13 /user:TOYAKUAO\Aladdin56 /pass
+	<details>
+			<summary>備考</summary>
+			<p><b>Windows11のUpdateによって、資格情報の使用のデフォルト設定が変更されたために発生する現象。下記URL参照</b></p>
+			<a href="https://blog.treedown.net/entry/2023/09/12/010000">Windows11のRDPはパスワード保存ができないので対処 - treedown’s Report</a></p>
+	</details>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+			<div id="other" class="TabContent">
+			<div class="qa-section">
+			<div class="question"><b>Q:プリンタのEPSON VP-D1800N(236)で納品書を印刷した場合、用紙が下から上へ送られるが、カバーの部分から上に行かない。</b></div>
+			<div class="answer">A:カバーについている歯車が本体の歯車とかみ合っておらず、ローラーが回転していなかった。カバーを一度外して再度取り付け、歯車が回るようになると、印刷も出来た。
+	</div>
+			<div class="qa-section">
+			<div class="question"><b>Q:ハンディスキャナのバーコードが読み込めない</b></div>
+			<div class="answer">A:Windows Updateのための再起動が本館2F左のPC(ハンディの通信のサーバ)で実行されており、通信が出来ないために全ての機能が使えなくなっていたと思われる。
+	</div>
+	</div>
+	</div>
+	</div>
+    <div id="search" class="TabContent">
+        <form action="/search" method="get">
+            <input type="text" id="searchInput" placeholder="検索キーワードを入力">
+            <button type="button" onclick="SearchContent()">検索</button>
+        </form>
+        <button id="back-button" onclick="GoBack()">トップページに戻る</button>
+        <div id="search-results"></div>
+        <form action="/submit" method="post">
+            <label><input type="CheckBox" id="option1" name="option1" checked>アプリ名</label>
+            <label><input type="CheckBox" id="option2" name="option2" checked>質問内容</label>
+            <label><input type="CheckBox" id="option3" name="option3" checked>回答内容</label>
+            <div id="error-message" style="display: none;">少なくとも1つのチェックボックスを選択してください。</div>
+        </form>
+    </div>
     <style>
+        /* 質問欄の背景色 */
+        .question {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            background-color: #f2f2f2;
+        }
         /* タブのスタイル */
         .tab {
             overflow: hidden;
@@ -27,8 +197,7 @@
         .tab button.active {
             background-color: #ccc;
         }
-        /* タブコンテンツのスタイル */
-        .tabcontent {
+        .TabContent {
             display: none;
             padding: 6px 12px;
             border: 1px solid #ccc;
@@ -48,13 +217,6 @@
             grid-template-columns: auto auto auto;
             gap: 10px;
         }
-                .question {
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin: 5px 0;
-            background-color: #f2f2f2; /* ここで背景色を設定します */
-        }
         .answer {
             display: none;
             padding: 10px;
@@ -62,309 +224,206 @@
             border-top: none;
             margin: 0 0 5px;
         }
+        .grid-container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tab button {
+            background-color: #007bff;
+            color: white;
+        }
+        .tab button:hover {
+            background-color: #0056b3;
+        }
+        .tab button.active {
+            background-color: #004085;
+        }
+        .question {
+            background-color: #e9ecef;
+        }
+        .answer {
+            background-color: #ffffff;
+            border-left: 3px solid #007bff;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: calc(100% - 20px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #error-message {
+            color: red;
+            font-weight: bold;
+        }
+        #search-results {
+            margin-top: 20px;
+        }
+        #back-button {
+            display: none;
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #back-button:hover {
+            background-color: #c82333;
+        }
     </style>
-</head>
-<body>
+    <script>
+        /* タブメニュー */
+        function ToggleMenu(evt, pageName) {
+            var i, TabContent, TabLinks;
+            TabContent = document.getElementsByClassName("TabContent");
+            TabLinks = document.getElementsByClassName("TabLinks");
 
-<div class="grid-container">
-    <button class="tablinks" onclick="toggleMenu(event, 'excel')">📝Excel</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'outlook')">📧Outlook</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'slack')">🍀Slack</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'nicollab')">📅Niコラボ</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'alladin')">📦アラジン</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'title')">タイトル</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'windows')">🌎Windows</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'other')">💊その他</button>
-    <button class="tablinks" onclick="toggleMenu(event, 'search')">🔍詳細検索</button>
-</div>
-    <div id="excel" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q: .xlsmファイルを開いたら、マクロの実行をブロックしたメッセージが表示される。</b></div>
-	<div class="answer">A: 「インターネットオプション」の画面の「セキュリティ」タブで「信頼済みサイト」を
-            選択して「サイト」ボタンをクリックし、「file://192.168.250.150」を追加する。
-            (「このゾーンのサイトにはすべてサーバーの確認(https:)を必要とする」のチェックは外しておく)]
-            <details>
-            <summary>備考</summary>
-            <p><b>「詳細を表示」をクリックすると、ブラウザで下記のページが表示される。</b></p>
-            <a href="https://support.microsoft.com/ja-jp/topic/%E6%BD%9C%E5%9C%A8%E7%9A%84%E3%81%AB%E5%8D%B1%E9%99%BA%E3%81%AA%E3%83%9E%E3%82%AF%E3%83%AD%E3%81%8C%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F-0952faa0-37e7-4316-b61d-5b5ed6024216">潜在的に危険なマクロがブロックされました - Microsoft サポート</a>
-            </details>
-	</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:セルにURLを入力すると、そのURLをクリックするとそのHPに飛ぶようになるが、HPに
-            飛ぶようにしつつ文字を変更する方法はあるか。(例：<a href="http://google.com	">文字</a>や<a href="http://google.com">●</a>	など文字や記号に設定してリンクを飛ぶ方法)</b></div>
-	<div class="answer">A: HPに飛ぶ情報は「ハイパーリンク」という機能であり、それを変更しない限り
-            文字を変更することは可能。そのセルをクリックすると画面が切り替わってしまうため、隣のセルを
-            クリック(選択)して十字キーで編集したいセルに移動すると良い。</div>
-		</div>
-		</div>
-		</div>
-	<div id="outlook" class="tabcontent">
-      		<div class="qa-section">
-<div class="question"><b>Q:メールアプリを起動しようとすると、NewOutlookが起動する。</b></div>
-<div class="answer">A:NewOutlookをアンインストール。
-           <details>
-            <summary>備考</summary>
-            <p><b>旧版起動</b></p>
-            <a href="https://mitomoha.hatenablog.com/entry/2022/08/17/014118">Microsoft 365 新 Outlook から戻せなくなったら古い Outlook を直接開きましょう - （）のブログ</a>
-            <p><b>画面から設定を戻す</b></p>
-            <a href="https://too-support.my.site.com/faq/s/article/000003233">Outlook（16.6x〜）で予期せず「新しい Outlook」に変更されメールの閲覧や送受信ができなくなった</a>
-            </details></div>
-	<div class="qa-section">
-<div class="question"><b>Q:インポートしても人数分「名前がありません」が表示される</b></div>
-<div class="answer">A:outlookのエクスポートファイル(.csv)はUTF-8で作成されるが、インポートする時はSJISで処理される。このため、.csvをSJISに変換してからインポートして、正常に処理された。</div>
-	</div>
-	</div>
-	</div>
-	<div id="slack" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:マウスカーソルが表示されない。</b></div>
-	<div class="answer">A:Windows再起動。
-           <details>
-            <summary>備考</summary>
-            <p><b>Slackのウィンドウの中ではマウスカーソルが表示されなくなった。タスクバーや、他のウィンドウでは表示される。</b></p>
-            </details>
-	</div>
-	</div>
-	</div>
-	<div id="nicollab" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:ワークフローのリストをダウンロードしたい。「一括操作」ではPDFしか出力出来ないが、Excelやcsvで出力したい。</b></div>
-	<div class="answer">A1:「詳細検索」で「申請書類」を指定すると、「書き出し」ボタンが表示される。このボタンをクリックすると、csvで出力される。</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:回覧板の選択項目を増やす方法が分からない。選択項目に「議事録」があるので追加ができるはずだが、どの画面で追加するかが分からない。</b></div>
-	<div class="answer">A:「右側にある「その他」の欄は自由に入力することが出来、そこに入力して回覧板を作成すると、次回以降は選択項目に追加された状態になります。</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:承認する時に通知設定にチェックを入れた状態で処理しようとすると、正しく処理されない場合がある。これを回避するため、通知設定を非表示または無効化したい。</b></div>
-	<div class="answer">A:通知設定を非表示または無効化することは出来ません。</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:「コメント通知」ボタンをクリックしないと通知先が見えないが、デフォルトで選択されているため「完了」をクリックした時に意図せず通知してしまう。</b></div>
-	<div class="answer">A:デフォルトで選択なしには出来ません。</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	<div id="alladin" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:2重起動のメッセージが出て、起動できない</b></div>
-	<div class="answer">A:とりあえずの対応として、Alt+Tabで画面を表示して閉じていった。後で、PCを再起動したらサーバーのタスクバーは表示された。
-	<details>
-	<summary>備考</summary>
-	<p><b>実際には最小化されていただけだと思われるが、このPC(本館2F左)はリモートデスクトップを使用した場合に、デスクトップはサーバー側だがタスクバーはクライアント側が表示されている。このため、最小化状態であることが分からず、2重起動をしていた。</b></p>
-	</details>
-	</div>
-	</div>
-	</div>
-	<div id="title" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:質問</b></div>
-	<div class="answer"><b>A:回答</b>
-	<details>
-	<summary>備考</summary>
-	<p><b>内容</b></p>
-	</details>
-	</div>
-	</div>
-	</div>
-	<div id="windows" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:アドレス帳の編集が出来ない</b></div>
-	<div class="answer">A:「フォルダーの指定」で、デフォルトであるドキュメントの中の「Canon FAX Data」を選択したら、「このフォルダにはすでにアドレス帳データが存在します。このデータを使用しますか？」というメッセージが出たため、「はい」を選択したら復旧した。画面等については備考欄のURLを参照。
-	<details>
-	<summary>備考</summary>
-	<p><a href="https://faq.canon.jp/app/answers/detail/a_id/103956/~/%E3%80%90ir-adv%E3%80%91%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%8B%E3%82%89%E3%83%95%E3%82%A1%E3%82%AF%E3%82%B9%E9%80%81%E4%BF%A1%E6%99%82%E3%80%81%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%B8%B3%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%8F%E3%80%8C%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%9F%E3%81%9F%E3%82%81%E3%80%81%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%B8%B3%E3%82%92%E6%93%8D%E4%BD%9C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%E3%80%8D%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95">【iR-ADV】パソコンからファクス送信時、アドレス帳が消えた／「エラーが発生したため、アドレス帳を操作できませんでした。」のエラーが表示されたときの対処方法</a></p>
-	</details>
-	</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:リモートデスクトップで(アラジンで出力した.xlsxファイルを)コピーし、ローカルで貼り付けようとしても、無効(出来ない)状態になっている。</b></div>
-	<div class="answer">A:リモート(サーバ)側でクリップボードを制御しているプロセスを再起動。(タスクマネージャーで「rdpclip.exe」を強制終了し、ファイルを指定して実行)
-	<details>
-	<summary>備考</summary>
-	<p><b>参照URLではグループポリシーの設定を変更する方法が記載されているが、アラジンのサーバーではグループポリシーを参照する権限が無いため、変更だけでなく確認も不可。</b></p>
-	<a href="https://atmarkit.itmedia.co.jp/ait/articles/1009/17/news125.html">【Windows 11対応】リモートデスクトップ接続でコピー＆ペーストする方法、できない場合の対処法：Tech TIPS - ＠IT</a></p>
-	</details>
-	</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:アラジンのAPサーバに、パスワード入力なしでログイン出来ていたが、パスワードを求められるようになった。</b></div>
-	<div class="answer">A:コマンドラインで下記を入力してEnter、メッセージが出るのでパスワードを入力。(IPアドレスとアカウントの番号部分は人によって異なる)
-	<br>192.から始まるIPアドレスと、user;から始まるAlladinの数字2桁の部分が異なる Cmdkey /generic:TERMSRV/192.168.168.250.13 /user:TOYAKUAO\Aladdin56 /pass
-	<details>
-	<summary>備考</summary>
-	<p><b>Windows11のUpdateによって、資格情報の使用のデフォルト設定が変更されたために発生する現象。下記URL参照</b></p>
-	<a href="https://blog.treedown.net/entry/2023/09/12/010000">Windows11のRDPはパスワード保存ができないので対処 - treedown’s Report</a></p>
-	</details>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	<div id="other" class="tabcontent">
-	<div class="qa-section">
-	<div class="question"><b>Q:プリンタのEPSON VP-D1800N(236)で納品書を印刷した場合、用紙が下から上へ送られるが、カバーの部分から上に行かない。</b></div>
-	<div class="answer">A:カバーについている歯車が本体の歯車とかみ合っておらず、ローラーが回転していなかった。カバーを一度外して再度取り付け、歯車が回るようになると、印刷も出来た。
-	</div>
-	<div class="qa-section">
-	<div class="question"><b>Q:ハンディスキャナのバーコードが読み込めない</b></div>
-	<div class="answer">A:Windows Updateのための再起動が本館2F左のPC(ハンディの通信のサーバ)で実行されており、通信が出来ないために全ての機能が使えなくなっていたと思われる。
-	</div>
-	</div>
-	</div>
-	</div>
-<div id="search" class="tabcontent">
-    <form action="/search" method="get">
-<input type="text" id="searchInput" placeholder="検索キーワードを入力">
-<button onclick="searchContent()">検索</button>
-    </form>
-        <form action="/submit" method="post">
-        <label><input type="checkbox" id="option1" name="option1"> オプション1</label>
-        <label><input type="checkbox" id="option2" name="option2"> オプション2</label>
-        <label><input type="checkbox" id="option3" name="option3"> オプション3</label>
-</div>
-</div>
+            var isActive = evt.currentTarget.classList.contains("active");
 
-<script>
-    function toggleMenu(evt, pageName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        tablinks = document.getElementsByClassName("tablinks");
-        
-        var isActive = evt.currentTarget.classList.contains("active");
-        
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        
-        if (!isActive) {
-            document.getElementById(pageName).style.display = "block";
-            evt.currentTarget.className += " active";
-            
-            for (i = 0; i < tablinks.length; i++) {
-                if (tablinks[i] !== evt.currentTarget) {
-                    tablinks[i].style.display = "none";
+            for (i = 0; i < TabContent.length; i++) {
+                TabContent[i].style.display = "none";
+            }
+            for (i = 0; i < TabLinks.length; i++) {
+                TabLinks[i].className = TabLinks[i].className.replace(" active", "");
+            }
+
+            if (!isActive) {
+                document.getElementById(pageName).style.display = "block";
+                evt.currentTarget.className += " active";
+
+                for (i = 0; i < TabLinks.length; i++) {
+                    if (TabLinks[i] !== evt.currentTarget) {
+                        TabLinks[i].style.display = "none";
+                    }
+                }
+            } else {
+                for (i = 0; i < TabLinks.length; i++) {
+                    TabLinks[i].style.display = "block";
                 }
             }
-        } else {
-            // If the clicked tab was active, show all tabs again
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.display = "block";
+        }
+
+        function OpenSubMenu(submenuId) {
+            var i, submenu;
+            submenu = document.getElementsByClassName("submenu");
+            for (i = 0; i < submenu.length; i++) {
+                submenu[i].style.display = "none";
+            }
+            document.getElementById(submenuId).style.display = "block";
+        }
+
+        function setupAccordion() {
+            var questions = document.getElementsByClassName("question");
+            for (var i = 0; i < questions.length; i++) {
+                questions[i].addEventListener("click", function () {
+                    this.nextElementSibling.style.display = this.nextElementSibling.style.display == "block" ? "none" : "block";
+                });
             }
         }
-    }
 
-    function openSubmenu(submenuId) {
-        var i, submenu;
-        submenu = document.getElementsByClassName("submenu");
-        for (i = 0; i < submenu.length; i++) {
-            submenu[i].style.display = "none";
+        setupAccordion(); // 初期のアコーディオン設定
+
+        /* 検索 */
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('search-results');
+        const backButton = document.getElementById('back-button');
+
+        function SearchContent() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            if (!keyword) {
+                searchResults.innerHTML = '<p>検索キーワードを入力してください。</p>';
+                return;
+            }
+            searchResults.innerHTML = ''; // 前の結果をクリア
+            var contentElements = document.querySelectorAll('.qa-section');
+
+            let resultsFound = false;
+            const seen = new Set(); // 検索結果の重複を防ぐためのセット
+
+            contentElements.forEach(function (element) {
+                const textContent = element.textContent.toLowerCase();
+                if (textContent.includes(keyword) && !seen.has(textContent)) {
+                    const result = element.cloneNode(true);
+                    searchResults.appendChild(result);
+                    seen.add(textContent); // 検索結果をセットに追加
+                    resultsFound = true;
+                }
+            });
+
+            if (!resultsFound) {
+                searchResults.innerHTML = '<p>検索結果がありません。</p>';
+            }
+
+            backButton.style.display = 'block';
+
+            setupAccordion(); // 検索結果にアコーディオンを適用
         }
-        document.getElementById(submenuId).style.display = "block";
-    }
-    
-        var questions = document.getElementsByClassName("question");
-    for (var i = 0; i < questions.length; i++) {
-        questions[i].addEventListener("click", function() {
-            this.nextElementSibling.style.display = this.nextElementSibling.style.display == "block" ? "none" : "block";
+
+        function GoBack() {
+            var i, TabContent, TabLinks;
+            document.getElementById("search").style.display = "none";
+            searchResults.innerHTML = '';
+            backButton.style.display = 'none';
+            TabContent = document.getElementsByClassName("TabContent");
+            TabLinks = document.getElementsByClassName("TabLinks");
+
+            for (i = 0; i < TabContent.length; i++) {
+                TabContent[i].style.display = "none";
+            }
+            for (i = 0; i < TabLinks.length; i++) {
+                TabLinks[i].style.display = "block";
+                TabLinks[i].className = TabLinks[i].className.replace(" active", "");
+            }
+        }
+
+        function CheckBoxValidation() {
+            const CheckBoxes = document.querySelectorAll('input[type="CheckBox"]');
+            let isChecked = false;
+
+            CheckBoxes.forEach(CheckBox => {
+                if (CheckBox.checked) {
+                    isChecked = true;
+                }
+            });
+
+            const errorMessage = document.getElementById('error-message');
+            if (isChecked) {
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        const CheckBoxes = document.querySelectorAll('input[type="CheckBox"]');
+        CheckBoxes.forEach(CheckBox => {
+            CheckBox.addEventListener('change', CheckBoxValidation);
         });
-    }
-    
-    
-      const searchInput = document.getElementById('search-input');
 
-searchInput.addEventListener('input', () => {
-  const keyword = searchInput.value;
-  console.log(keyword);
-});
+        /* タブが機能するように設定 */
+        function resetTabs() {
+            const TabLinks = document.getElementsByClassName('TabLinks');
+            for (let i = 0; i < TabLinks.length; i++) {
+                TabLinks[i].onclick = function (event) {
+                    ToggleMenu(event, TabLinks[i].getAttribute('onclick').match(/'(.*?)'/)[1]);
+                };
+            }
+        }
 
-const searchTargets = document.querySelectorAll('.search-target');
-
-searchInput.addEventListener('input', () => {
-  const keyword = searchInput.value.trim().toLowerCase();
-  console.log(keyword);
-});
-
-
-const searchResults = document.getElementById('search-results');
-
-function showSearchResult(target) {
-  target.style.display = 'block';
-}
-
-function hideSearchResult(target) {
-  target.style.display = 'none';
-}
-
-
-function filterSearchResults() {
-  searchTargets.forEach((target) => {
-    const text = target.textContent.toLowerCase();
-    if (text.includes(keyword)) {
-      showSearchResult(target);
-    } else {
-      hideSearchResult(target);
-    }
-  });
-}
-
-searchInput.addEventListener('input', filterSearchResults);
-
-
-
-function showNoResultsMessage() {
-  searchResults.innerHTML = '<p>検索結果がありません。</p>';
-}
-
-function clearSearchResults() {
-  searchResults.innerHTML = '';
-}
-
-function updateSearchResults() {
-  const visibleTargets = Array.from(searchTargets).filter((target) => target.style.display === 'block');
-  if (visibleTargets.length === 0) {
-    showNoResultsMessage();
-  } else {
-    clearSearchResults();
-  }
-}
-
-searchInput.addEventListener('input', updateSearchResults);
-
-
-
-let timeoutId = null;
-const debounceTime = 300;
-
-function debouncedFilterSearchResults() {
-  if (timeoutId) {
-    clearTimeout(timeoutId);
-  }
-  timeoutId = setTimeout(filterSearchResults, debounceTime);
-}
-
-searchInput.addEventListener('input', debouncedFilterSearchResults);
-
-function searchContent() {
-  var input = document.getElementById("searchInput").value.toLowerCase();
-  var contentElements = document.getElementsByTagName("body")[0].getElementsByTagName("*");
-
-  for (var i = 0; i < contentElements.length; i++) {
-    try {
-      var contentText = contentElements[i].textContent.toLowerCase();
-      if (contentText.includes(input)) {
-        contentElements[i].style.display = "block";
-      } else {
-        contentElements[i].style.display = "none";
-      }
-    } catch (e) {
-      // アクセスできない要素をスキップ
-      continue;
-    }
-  }
-}
-
-</script>
-
+        resetTabs(); // 初期のタブ設定
+    </script>
 </body>
 </html>
