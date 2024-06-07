@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>横棒グラフ</title>
+</head>
+<!-- ポータルパーツとして使用する場合はここ<body>から下部</body>までコピーすること。 -->
+<body>
+<div>
+<center>
+<br>進捗率  6/6現在</br>
+</center>
+</div>
+
+<div style="width: 600px; margin: 20px auto; border: 1px solid #ccc; padding: 10px;">
+  <canvas id="barGraph" width="700" height="660"></canvas>
+</div>
+
+<script>
+
+  //コメントここから
+    
+    //横棒グラフの隣にも数値を付けたい場合は以下のラベルからctxまでの//を消してください。
+    //横棒グラフの中の数値を消したい場合はそちらの先頭のctrまでに//を入れてください。
+    // ラベル（横棒グラフの隣にも数値表示）
+    //ctx.fillStyle = "#000";
+    //ctx.fillText(item.label, startX + barWidth + 5, startY + index * (barHeight + barGap) + 20);
+    
+    //コメントここまで
+
+
+  //入力方法
+  //name: ""←引用符の間に名前
+  //value: グラフの大きさの数値を入れる(labelと同様の数値)
+  //color: ""引用符の間に♯から始まる色コードを入力
+  //label: ""←引用符の間に数字
+  //人数を増やしたい場合は↓の{から}までをコピーして↑のような入力をすると追加できる。
+  //もし反映されない場合は<canvas id="barGraph" width="500" height="700">のheight=""←引用符の中を調整すること
+  //{ name: "名前", value: グラフの数値, color: "カラーコード", label: "パーセント" }, 
+  
+  const data = [
+    { name: "鈴木新太郎", value: 31.5, color: "#4169e1", label: "31.5%" },       
+    { name: "佐藤正樹", value: 32.1, color: "#4169e1", label: "32.1%" },
+    { name: "黒須良介", value: 21.7, color: "#4169e1", label: "21.7%" },
+    { name: "鈴木哲也", value: 39.3, color: "#4169e1", label: "39.3%" },
+    { name: "光林秀寛", value: 23.9, color: "#4169e1", label: "23.9%" },
+    { name: "縄茂恩", value: 21.9, color: "#4169e1", label: "21.9%" },
+    { name: "徳山大輔", value: 24.7, color: "#4169e1", label: "24.7%" },
+    { name: "加賀谷竜之介", value: 17.8, color: "#4169e1", label: "17.8%" },
+    { name: "谷田部聡文", value: 35.1, color: "#4169e1", label: "35.1%" },
+    { name: "エリア計", value: 27.5, color: "#00CC66", label: "27.5%" },
+    { name: "JF", value: 30.2, color: "#4169e1", label: "30.2%" },
+    { name: "MSN", value: 26.9, color: "#4169e1", label: "26.9%" },
+    { name: "一般計", value: 28.0, color: "#00CC66", label: "28.0%" },
+    { name: "CMS", value: 27.8, color: "#4169e1", label: "27.8%" },
+    { name: "合計", value: 28.0, color: "#00CC66", label: "28.0%" },
+  ];
+
+  // グラフ描画
+  const canvas = document.getElementById('barGraph');
+  const ctx = canvas.getContext('2d');
+
+  const barHeight = 30;
+  const barGap = 10;
+  const startX = 100; // 開始X座標
+  const startY = 20;  // 開始Y座標
+  const maxValue = 100; // 最大値
+  const scaleWidth = 400; // スケールの幅
+  const graphHeight = (barHeight + barGap) * data.length; // グラフ全体の高さ
+  const endY = startY + graphHeight; // 終了Y座標
+
+  // 上部横軸の描画
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(startX + scaleWidth, startY);
+  ctx.stroke();
+
+  // 下部横軸の描画
+  ctx.beginPath();
+  ctx.moveTo(startX, endY);
+  ctx.lineTo(startX + scaleWidth, endY);
+  ctx.stroke();
+
+  // メモリの描画（20%ごと）
+  for (let i = 0; i <= 5; i++) {
+    let x = startX + (scaleWidth / 5) * i;
+    ctx.moveTo(x, startY - 5);
+    ctx.lineTo(x, startY + (barHeight + barGap) * data.length);
+    ctx.stroke();
+    ctx.fillText(`${i * 20}%`, x - 10, startY - 10);
+    ctx.fillText(`${i * 20}%`, x - 10, startY + (barHeight + barGap) * data.length + 20); // 上部メモリ
+  }
+
+  // メモリと項目名、横棒グラフ、ラベルの描画
+  data.forEach((item, index) => {
+    const barWidth = (item.value / maxValue) * scaleWidth; // 横幅計算
+
+    // 項目名
+    ctx.fillStyle = "#000"; // 項目名の色を設定
+    if (item.name === "エリア計" || item.name === "一般計" || item.name === "合計") {
+      ctx.font = "bold 12px Meiryo"; // フォントを太字に設定
+    } else {
+      ctx.font = "12px Meiryo"; // 通常フォント
+    }
+    ctx.fillText(item.name, 10, startY + index * (barHeight + barGap) + 20);
+
+    // 横棒グラフ
+    ctx.fillStyle = item.color;
+    ctx.fillRect(startX, startY + index * (barHeight + barGap), barWidth, barHeight);
+
+    // バー内の文字
+    ctx.fillStyle = "#fff";
+    ctx.fillText(item.label, startX + 5, startY + index * (barHeight + barGap) + 20);
+  });
+
+</script>
+
+</body>
+<!-- ポータルパーツとして使用する場合はここ</body>までコピー -->
+</html>
